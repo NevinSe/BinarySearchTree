@@ -21,17 +21,23 @@ namespace BinarySearch
             binaryTree.AddNode(2);
             while(true)
             {
-                Console.WriteLine("Enter a valid integer");
-                if (binaryTree.Search(int.Parse(Console.ReadLine())))
+                Console.WriteLine("\r\nEnter a valid integer");
+                try
                 {
-                    Console.WriteLine("found it");
-                    Console.ReadLine();
+                    if (binaryTree.Search(int.Parse(Console.ReadLine())))
+                    {
+                        Console.WriteLine("found it");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not in the list");
+                    }
                 }
-                else
+                catch
                 {
-                    Console.WriteLine("Not in the list");
-                    Console.ReadLine();
+                    Console.WriteLine("I SAID A VALID INTEGER!");
                 }
+               
             }
             
         }
