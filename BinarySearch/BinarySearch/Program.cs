@@ -13,15 +13,27 @@ namespace BinarySearch
             Tree<int> binaryTree = new Tree<int>();
             binaryTree.AddNode(10);
             binaryTree.AddNode(20);
-            binaryTree.AddNode(5);
-            binaryTree.AddNode(6);
+            binaryTree.AddNode(30);
             binaryTree.AddNode(7);
-
-            if(binaryTree.Search(6))
+            binaryTree.AddNode(6);
+            binaryTree.AddNode(5);
+            binaryTree.AddNode(3);
+            binaryTree.AddNode(2);
+            while(true)
             {
-                Console.WriteLine("found it");
-                Console.ReadLine();
+                Console.WriteLine("Enter a valid integer");
+                if (binaryTree.Search(int.Parse(Console.ReadLine())))
+                {
+                    Console.WriteLine("found it");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("Not in the list");
+                    Console.ReadLine();
+                }
             }
+            
         }
     }
 }

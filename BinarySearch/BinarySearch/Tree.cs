@@ -23,17 +23,24 @@ namespace BinarySearch
             currNode = root;
             while(true)
             {
-                if (Comparer<T>.Default.Compare(currNode.info, value) == 0)
+                try
                 {
-                    return true;
+                    if (Comparer<T>.Default.Compare(currNode.info, value) == 0)
+                    {
+                        return true;
+                    }
+                    else if (Comparer<T>.Default.Compare(currNode.info, value) > 0)
+                    {
+                        currNode = currNode.children[0];
+                    }
+                    else if (Comparer<T>.Default.Compare(currNode.info, value) < 0)
+                    {
+                        currNode = currNode.children[1];
+                    }
                 }
-                else if (Comparer<T>.Default.Compare(currNode.info, value) > 0)
+                catch
                 {
-                    currNode = currNode.children[0];
-                }
-                else if (Comparer<T>.Default.Compare(currNode.info, value) < 0)
-                {
-                    currNode = currNode.children[1];
+                    return false;
                 }
             }
         }
